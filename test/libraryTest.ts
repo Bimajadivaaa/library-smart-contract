@@ -60,6 +60,12 @@ describe('Testing Library Contract', async () => {
     );
   });
   it('Jika Bukan Admin Ingin Update Buku', async () => {
+    await Library.connect(NotAdmin).addBooks(
+      '978-623-177-058-11',
+      'Machine Learning',
+      2022,
+      'Hanny Komalig'
+    );
     await expect(
       Library.connect(NotAdmin).editBooks(
         '978-623-177-058-11',
@@ -79,6 +85,12 @@ describe('Testing Library Contract', async () => {
     await Library.connect(Admin).deleteBooks('978-623-177-058-11');
   });
   it('Jika Bukan Admin Ingin Menghapus Buku', async () => {
+    await Library.connect(NotAdmin).addBooks(
+      '978-623-177-058-11',
+      'Machine Learning',
+      2022,
+      'Hanny Komalig'
+    );
     await expect(
       Library.connect(NotAdmin).deleteBooks('978-623-177-058-11')
     ).to.be.revertedWith('Anda bukan seorang Admin!');
