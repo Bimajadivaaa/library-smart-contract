@@ -1,0 +1,12 @@
+Command deploy 
+sudo npx hardhat deploy --tags LibraryBookSmartContract --network hardhat
+sudo npx hardhat node
+
+Command run scripts
+sudo npx hardhat run scripts/addBooks.ts --network localhost
+sudo npx hardhat run scripts/updateBooks.ts --network localhost
+sudo npx hardhat run scripts/deleteBooks.ts --network localhost
+sudo npx hardhat run scripts/getDataBooks.ts --network localhost
+
+Command for testing
+sudo npx hardhat test
